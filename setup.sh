@@ -3,9 +3,8 @@ baselocation=$PWD
 apt-get update
 apt-get install libasound2-dev memcached python-pip mpg123 python-alsaaudio python-aubio
 pip install -r requirements.txt
-cp initd_alexa.sh /etc/init.d/alexa
-cd /etc/rc5.d
-ln -s ../init.d/alexa S99alexa
+ln -s ../init.d/alexa
+update-rc.d alexa defaults
 touch /var/log/alexa.log
 cd $baselocation
 echo "Enter your ProductID:"
@@ -30,7 +29,7 @@ echo Client_Secret = \"$secret\" >> creds.py
 
 ip=$(ifconfig eth0 | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1)
 echo "Open http://$ip:5000"
-python ./auth_web.py 
+python ./auth_web.py
 
 echo "You can now reboot"
 
