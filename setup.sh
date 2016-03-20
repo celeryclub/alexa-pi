@@ -3,7 +3,7 @@ baselocation=$PWD
 apt-get update
 apt-get install libasound2-dev memcached python-pip mpg123 python-alsaaudio python-aubio
 pip install -r requirements.txt
-ln -s ../init.d/alexa
+ln -s initd_alexa.sh /etc/rc5.d/alexa
 update-rc.d alexa defaults
 touch /var/log/alexa.log
 cd $baselocation
