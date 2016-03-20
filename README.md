@@ -28,12 +28,12 @@ Make a note of these credentials you will be asked for them during the install p
 
 ### Installation
 
-Boot your fresh Pi and login to a command prompt as root.
-
-Make sure you are in /root
+Boot your fresh Pi and login to a command prompt.
 
 Clone this repo to the Pi
 `git clone https://github.com/celeryclub/alexa-pi.git`
+Start a new shell process as root
+`sudo bash`
 Run the setup script
 `./setup.sh`
 
